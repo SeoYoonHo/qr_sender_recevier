@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Sender</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+    <h1>QR Code Sender</h1>
+
+    <div>
+      <label for="frameRateSlider"
+        >송출 프레임: <span id="frameRateLabel">2 FPS</span></label
+      >
+    </div>
+    <div>
+      <input type="range" id="frameRateSlider" min="1" max="60" value="2" />
+    </div>
+
+    <input type="file" id="fileInput" />
+    <button id="startButton">전송 시작</button>
+    <button id="pauseButton">중지</button>
+
+    <h3>재전송 인덱스</h3>
+    <input type="text" id="resendIndicesInput" placeholder="예: 1,2,3" />
+    <button id="resendButton">지정 인덱스 전송</button>
+
+    <div id="qrCanvasContainer"></div>
+    <p id="status">파일을 선택하여 전송을 시작하세요.</p>
+
+    <script src="sender.js"></script>
+  </body>
+</html>

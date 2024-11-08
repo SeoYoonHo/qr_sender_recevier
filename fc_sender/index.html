@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Sender</title>
+    <style>
+      #qrCanvas {
+        min-width: 1000px;
+        min-height: 1000px;
+        max-width: 1000px; /* 최대 크기 설정 */
+        max-height: 1000px;
+        margin-top: 20px; /* QR 코드와 상단 콘텐츠 간격 */
+      }
+      .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <input type="file" id="fileInput" />
+      <p id="status">파일을 선택해주세요.</p>
+
+      <!-- 프레임 조절 슬라이더 -->
+      <label for="frameSlider"
+        >송출 프레임: <span id="frameLabel">1</span> FPS</label
+      >
+      <input
+        type="range"
+        id="frameSlider"
+        min="1"
+        max="60"
+        step="1"
+        value="1"
+      />
+    </div>
+
+    <!-- QR 코드 캔버스 -->
+    <canvas id="qrCanvas"></canvas>
+
+    <!-- qrcode 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
