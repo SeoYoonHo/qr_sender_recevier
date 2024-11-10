@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Sender</title>
+    <style>
+      .qr-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .qr-canvas {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>QR Code Sender</h1>
+    <input type="file" id="fileInput" />
+    <button id="startButton">전송 시작</button>
+    <button id="pauseButton">일시 중지</button>
+    <input type="range" id="frameRateSlider" min="1" max="20" value="20" />
+    <label id="frameRateLabel">20 FPS</label>
+    <input
+      type="text"
+      id="resendIndicesInput"
+      placeholder="재전송할 인덱스 입력 (,로 구분)"
+    />
+    <button id="resendButton">지정 인덱스 전송</button>
+    <p id="status"></p>
+
+    <!-- QR 코드 두 개를 표시할 컨테이너 -->
+    <div class="qr-container">
+      <div id="qrCanvasContainer1" class="qr-canvas"></div>
+      <div id="qrCanvasContainer2" class="qr-canvas"></div>
+    </div>
+
+    <button id="downloadBtn">파일 다운로드</button>
+
+    <!-- QRCode 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="sender.js"></script>
+  </body>
+</html>
